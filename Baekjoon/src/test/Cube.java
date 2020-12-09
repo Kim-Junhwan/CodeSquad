@@ -9,6 +9,7 @@ public class Cube {
 	
 	 Deque<String> dq;
 	Scanner scanner=new Scanner(System.in);
+	String[] inputlist;
 	String[] list;
 	String input;
 	
@@ -17,9 +18,33 @@ public class Cube {
 		print(threecube);
 		while(true) {
 			System.out.print("CUBE >");
-			list=scanner.next().split("");
+			inputlist=scanner.next().split("");
+			list=relist(inputlist);
 			move(threecube);
 		}
+	}
+	
+	public String[] relist(String[] str) {	//입력받은 문자열 '도 포함해서 나누기.
+		int nullnum=0;
+		int newstrnum=0;
+		String[] newstr;
+		for(int i=0;i<str.length;i++) {
+			if(str[i].equals("\'")) {
+				str[i-1]=str[i-1]+str[i];
+				str[i]=null;
+				nullnum++;
+			}
+		}
+		newstr=new String[str.length-nullnum];
+		for(int i=0;i<str.length;i++) {
+			if(str[i]==null)
+				continue;
+			else {
+				newstr[newstrnum]=str[i];
+				newstrnum++;
+			}
+		}
+		return newstr;
 	}
 	
 	public void move(String[][] threecube) {
