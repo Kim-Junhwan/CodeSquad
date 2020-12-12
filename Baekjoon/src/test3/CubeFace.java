@@ -3,6 +3,7 @@ package test3;
 public class CubeFace {
 	String[][]face;
 	int name;
+	String[] line=new String[3];
 	
 	public CubeFace(String color,int name) {
 		face=new String[3][3];
@@ -32,6 +33,29 @@ public class CubeFace {
 		this.face = face;
 	}
 	
+	public String[] getrightline() {
+		for(int i=0;i<3;i++) {
+			line[i]=face[i][2];
+		}
+		return line;
+	}
 	
-	
+	public String[] getleftline() {
+		for(int i=0;i<3;i++) {
+			line[i]=face[i][0];
+		}
+		return line;
+	}
+	public String[] getheadline() {
+		for(int i=0;i<3;i++) {
+			line[i]=face[0][i];
+		}
+		return line;
+	}
+	public String[] getbottomline() {
+		for(int i=0;i<3;i++) {
+			line[i]=face[2][i];
+		}
+		return line;
+	}
 }
