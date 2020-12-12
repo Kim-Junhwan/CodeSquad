@@ -35,7 +35,7 @@ public class CubeFace {
 	
 	public String[] getrightline() {
 		for(int i=0;i<3;i++) {
-			line[i]=face[i][2];
+			line[i]=face[2-i][2];
 		}
 		return line;
 	}
@@ -48,7 +48,7 @@ public class CubeFace {
 	}
 	public String[] getheadline() {
 		for(int i=0;i<3;i++) {
-			line[i]=face[0][i];
+			line[i]=face[0][2-i];
 		}
 		return line;
 	}
