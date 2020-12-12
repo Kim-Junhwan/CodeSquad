@@ -17,10 +17,18 @@ public class Cube {
 	String[][] faceempty=empty.getFace();
 	
 	/*
-	 * f
-	 * {(1,bottom),(4,right),(3.head),(5,left)}
-	 * 
-	 * 
+	 * F
+	 * {(1,bottom),(4,right),(3,head),(5,left)}
+	 * U
+	 *{(4,left),(2,head),(5,head),(6,head)}
+	 * D
+	 * {(6,bottom),(5,bottom),(2.bottom),(4,bototm)}
+	 * B
+	 * {(1,head),(5,right),(2,bottom),(4.left)}
+	 * L
+	 * {(1,left),(6,right),(3,left),(2,left)}
+	 * R
+	 * {(1,right),(2,right),(3,right),(6,left)}
 	 */
 	
 	
@@ -34,38 +42,28 @@ public class Cube {
 		print();
 	}
 
+	public void init(String[][] input,int i) {
+		for(int j=0;j<3;j++) {
+			System.out.print(" "+input[i][j]+" ");
+		}
+	}
+	
 	public void print() {
 		for(int i=0;i<3;i++) {
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+faceempty[i][j]+" ");
-			}
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+faceone[i][j]+" ");
-			}
+			init(faceempty,i);
+			init(faceone,i);
 			System.out.println();
 		}
 		for(int i=0;i<3;i++) {
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+facefour[i][j]+" ");
-			}
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+facetwo[i][j]+" ");
-			}
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+facefive[i][j]+" ");
-			}
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+facesix[i][j]+" ");
-			}
+			init(facefour,i);
+			init(facetwo,i);
+			init(facefive,i);
+			init(facesix,i);
 			System.out.println();
 		}
 		for(int i=0;i<3;i++) {
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+faceempty[i][j]+" ");
-			}
-			for(int j=0;j<3;j++) {
-				System.out.print(" "+facethree[i][j]+" ");
-			}
+			init(faceempty,i);
+			init(facethree,i);
 			System.out.println();
 		}
 		
